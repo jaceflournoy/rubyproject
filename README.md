@@ -1,6 +1,7 @@
 # README
 
 Scaffold:
+
 	Car:
 		VIN:string
 		color:string
