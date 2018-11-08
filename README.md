@@ -28,6 +28,7 @@ Scaffold:
 		TotalPrice:decimal
 		Multiplier:decimal
 		Customer:references //Reference from customer
+		Employee:references //Reference from Employee
 		Sold:Boolean
 		Car:references //Reference from Car
 		Loan:references //Reference from Loan
