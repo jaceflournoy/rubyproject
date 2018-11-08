@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Scaffold:
+	Car:
+		VIN:string
+		color:string
+		model:string
+		make:string
+		WholesalePrice:decimal
+		Vehicle Image // Add Later
 
-Things you may want to cover:
+	Customer:
+		FirstName:String
+		LastName:String
+		PhoneNumber:String
 
-* Ruby version
 
-* System dependencies
+	Employees:
+		FirstName:String
+		LastName:String
+		Role:references - Create a drop down when selecting it
 
-* Configuration
+	Role:
+		Name:String
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+	Quote:
+		TotalPrice:decimal
+		Multiplier:decimal
+		Customer:references //Reference from customer
+		Sold:Boolean
+		Car:references //Reference from Car
+		Loan:references //Reference from Loan
+		Wholesale Price
+		
+	Loan:
+		Type:integer
+		InterestRate:decimal
