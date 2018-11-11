@@ -5,8 +5,8 @@ Scaffold:
 	Car:
 		VIN:string
 		color:string
-		model:string
 		make:string
+		model:string
 		WholesalePrice:decimal
 		Vehicle Image // Add Later
 
@@ -15,14 +15,17 @@ Scaffold:
 		LastName:String
 		PhoneNumber:String
 
+	Role:
+		Name:String
 
-	Employees:
+	Employee:
 		FirstName:String
 		LastName:String
 		Role:references - Create a drop down when selecting it
 
-	Role:
-		Name:String
+	Loan:
+		Type:integer
+		InterestRate:decimal
 
 	Quote:
 		TotalPrice:decimal
@@ -33,7 +36,4 @@ Scaffold:
 		Car:references //Reference from Car
 		Loan:references //Reference from Loan
 		Wholesale Price
-		
-	Loan:
-		Type:integer
-		InterestRate:decimal
+	
