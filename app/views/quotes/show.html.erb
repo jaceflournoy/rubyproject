@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Totalprice:</strong>
+  <%= @quote.totalprice %>
+</p>
+
+<p>
+  <strong>Multiplier:</strong>
+  <%= @quote.multiplier %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @quote.customer %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @quote.employee %>
+</p>
+
+<p>
+  <strong>Sold:</strong>
+  <%= @quote.sold %>
+</p>
+
+<p>
+  <strong>Car:</strong>
+  <%= @quote.car %>
+</p>
+
+<p>
+  <strong>Loan:</strong>
+  <%= @quote.loan %>
+</p>
+
+<p>
+  <strong>Wholesaleprice:</strong>
+  <%= @quote.wholesaleprice %>
+</p>
+
+<%= link_to 'Edit', edit_quote_path(@quote) %> |
+<%= link_to 'Back', quotes_path %>
