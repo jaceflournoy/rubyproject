@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'cars#index'
   resources :quotes
   resources :loans
   resources :employees
