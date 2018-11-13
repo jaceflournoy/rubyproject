@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rubyproject</title>
+    <title>Compass Cars</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,16 @@
   </head>
 
   <body>
+  <div id="header">
+    <h1>Compass Cars</h1>
+    <a href="/cars">Cars</a>
+    <a href="/customers">Customers</a>
+    <a href="/employees">Employees</a>
+    <a href="/loans">Loans</a>
+    <a href="/quotes">Quotes</a>
+    <a href="/roles">Roles</a>
+
+  </div>
     <%= yield %>
   </body>
 </html>
