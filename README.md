@@ -42,9 +42,10 @@ New Branch List:
 Feature Branches:
 
 	Login (complete)
+	Authorization (complete)
+	Image capability (complete)
+	Search functionality
 	Get dropdowns working of each table
-	Add authorization & Add roles
-	add image compatibility on Car table
 	PDF compatibility for Quote table
 	add math to Loan and Quote tables
 	Add Dealership page / Sales Page
