@@ -1,5 +1,22 @@
 # README
 
+
+Known Bugs:
+
+    When logged in:
+    - If you delete the account you're logged in as, the app crashes 
+    because it kind find the session ID. A temporary fix for this is to restart the application
+    and clear your browser cache.
+    
+    When adding a new car:
+    - If you don't insert every field when adding a new car, the code used to insert
+    an image breaks and you won't be able to load cars. You can fix by temporarily removing
+    the image code on the cars index page and then refreshing and deleting the record causing
+    problems
+    
+
+
+
 Scaffold:
 
 	Car:
