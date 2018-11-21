@@ -44,6 +44,7 @@ Feature Branches:
 	Login (complete)
 	Authorization (complete)
 	Image capability (complete)
+	Roles/Permissions (need to finish)
 	Search functionality
 	Get dropdowns working of each table
 	PDF compatibility for Quote table
