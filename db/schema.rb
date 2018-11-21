@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_13_203419) do
+ActiveRecord::Schema.define(version: 2018_11_21_002436) do
 
   create_table "cars", force: :cascade do |t|
     t.string "vin"
@@ -74,7 +74,10 @@ ActiveRecord::Schema.define(version: 2018_11_13_203419) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role_id"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
 end

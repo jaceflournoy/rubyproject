@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  load_and_authorize_resource
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   # GET /customers
@@ -10,6 +11,7 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+
   end
 
   # GET /customers/new
