@@ -6,6 +6,12 @@ class Ability
     can :read, :all
     can :manage, :all if user.role == "admin"
     can :manage, :all if user.role == "dealership_owner"
+    can :manage, :all if user.role == "sales_manager"
+    can :manage, :all if user.role == "finance_manager"
+    can :manage, :all if user.role == "inventory_manager"
+    can :manage, :all if user.role == "sales_person"
+#TODO ADD THESE AUTHORIZATIONS
+
     # Define abilities for the passed in user here. For example
     # The first argument to `can` is the action you are giving the user
     # permission to do.
