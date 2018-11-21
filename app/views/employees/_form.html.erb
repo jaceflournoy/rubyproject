@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :firstname %>
+    <%= form.label "First Name:" %>
     <%= form.text_field :firstname %>
   </div>
 
   <div class="field">
-    <%= form.label :lastname %>
+    <%= form.label "Last Name:" %>
     <%= form.text_field :lastname %>
   </div>
 
   <div class="field">
-    <%= form.label :role_id %>
-    <%= form.text_field :role_id %>
+    <%= form.label "Role:" %>
+    <%= form.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}) %>
   </div>
 
   <div class="actions">
