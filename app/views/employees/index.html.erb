@@ -17,7 +17,7 @@
       <tr>
         <td><%= employee.firstname %></td>
         <td><%= employee.lastname %></td>
-        <td><%= employee.role %></td>
+        <td><%= employee.role.name %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
