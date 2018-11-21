@@ -6,6 +6,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Vin</th>
       <th>Color</th>
       <th>Make</th>
@@ -18,11 +19,12 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr>
+        <td><%=image_tag(car.image, style: 'width:100px;height:100px;')%></td>
         <td><%= car.vin %></td>
         <td><%= car.color %></td>
         <td><%= car.make %></td>
         <td><%= car.model %></td>
-        <td><%= car.wholesaleprice %></td>
+        <td>$<%= car.wholesaleprice %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
         <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -23,6 +23,9 @@
     background-color: #c9d8c5;
 }
 
+#login {
+    text-align: right;
+}
 body{
     background-color: #edd9c0
 }
@@ -46,9 +49,4 @@ table {
 
 h3, h4 {
     text-decoration: underline
-}
-
-#login {
-    text-align: right;
-
 }

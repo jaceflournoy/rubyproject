@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :car_id %>
-    <%= form.text_field :car_id %>
+    <%= form.collection_select :car_id, Car.all, :id, :full_car %>
   </div>
 
   <div class="field">
