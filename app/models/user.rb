@@ -3,5 +3,5 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
 
-  ROLES = %i[admin sales_person sales_manager finance_manager inventory_manager dealership_owner]
+  ROLES = %i[admin dealership_owner sales_person sales_manager finance_manager inventory_manager]
 end
