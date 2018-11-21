@@ -5,3 +5,4 @@ class Car < ApplicationRecord
     "#{vin} - #{make} #{model}"
   end
 end
+
