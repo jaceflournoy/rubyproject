@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "Type: " %>
-    <%= form.number_field :type %>
+    <%= form.label "Loan Name: " %>
+    <%= form.text_field :loanname %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Years: " %>
+    <%= form.collection_select(:year, Loan::YEARS, :to_s, lambda{|i| i.to_s.humanize}) %>
   </div>
 
   <div class="field">
