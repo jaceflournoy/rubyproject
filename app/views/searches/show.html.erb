@@ -1,0 +1,21 @@
+<h1>Search Result</h1>
+
+<p><%= link_to 'Back', new_search_path %></p>
+
+<% if @search.search_cars.empty? %>
+  <p>No Records Found</p>
+
+<%else %>
+
+  <% @search.search_cars.each do |c| %>
+    <br>
+
+    <div class="div">
+      <p>Make: <%=c.make %></p>
+      <p>Model: <%=c.make %></p>
+      <p>Color: <%=c.make %></p>
+      <p>Price: <%=c.make %></p>
+      <p>VIN: <%=c.make %></p>
+    </div>
+    <%end %>
+  <% end %>

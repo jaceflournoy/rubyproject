@@ -5,4 +5,5 @@ class Quote < ApplicationRecord
   belongs_to :loan
 
 #   TODO add math for price, constant multiplier and wholesale price
+
 end

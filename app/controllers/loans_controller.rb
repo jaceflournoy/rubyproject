@@ -70,6 +70,6 @@ class LoansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def loan_params
-      params.require(:loan).permit(:type, :interestrate)
+      params.require(:loan).permit(:loanname, :year, :interestrate)
     end
 end

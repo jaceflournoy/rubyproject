@@ -12,22 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "Email: " %>
+    <%= form.label "First Name " %>
+    <%= form.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Last Name " %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Email " %>
     <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label "Password:" %>
+    <%= form.label "Password" %>
     <%= form.password_field :password %>
   </div>
 
   <div class="field">
-    <%= form.label "Password Confirmation: " %>
+    <%= form.label "Password Confirmation " %>
     <%= form.password_field :password_confirmation %>
   </div>
 
   <div class="field">
-    <%= form.label "Role:" %>
+    <%= form.label "Role" %>
     <%= form.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}) %>
   </div>
 

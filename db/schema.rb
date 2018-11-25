@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_21_013649) do
+ActiveRecord::Schema.define(version: 2018_11_25_224356) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -61,10 +61,11 @@ ActiveRecord::Schema.define(version: 2018_11_21_013649) do
   end
 
   create_table "loans", force: :cascade do |t|
-    t.integer "type"
-    t.decimal "interestrate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "loanname"
+    t.integer "year"
+    t.decimal "interestrate"
   end
 
   create_table "quotes", force: :cascade do |t|
@@ -90,6 +91,18 @@ ActiveRecord::Schema.define(version: 2018_11_21_013649) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.string "keyword"
+    t.string "make"
+    t.string "model"
+    t.string "color"
+    t.decimal "minprice"
+    t.decimal "maxprice"
+    t.string "vin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -97,6 +110,8 @@ ActiveRecord::Schema.define(version: 2018_11_21_013649) do
     t.datetime "updated_at", null: false
     t.integer "role_id"
     t.string "role"
+    t.string "firstname"
+    t.string "lastname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
   end

@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "Customer: " %>
-    <%= form.collection_select :customer_id, Customer.all, :id, :firstname %>
+    <%= form.label "Customer " %>
+    <%= form.collection_select :customer_id, Customer.all, :id, :full_name %>
   </div>
 
   <div class="field">
-    <%= form.label :employee_id %>
-    <%= form.text_field :employee_id %>
+    <%= form.label "Employee " %>
+    <%= form.collection_select :user_id, User.all, :id, :full_name %>
   </div>
 
   <div class="field">
@@ -27,22 +27,22 @@
   </div>
 
   <div class="field">
-    <%= form.label :wholesaleprice %>
+    <%= form.label "Wholesale Price" %>
     <%= form.text_field :wholesaleprice %>
   </div>
 
   <div class="field">
-    <%= form.label :loan_id %>
-    <%= form.text_field :loan_id %>
+    <%= form.label "Loan " %>
+    <%= form.collection_select :loan_id, Loan.all, :id, :full_name %>
   </div>
 
   <div class="field">
-    <%= form.label "Multiplier: " %>
+    <%= form.label "Multiplier " %>
     <%= form.text_field :multiplier %>
   </div>
 
   <div class="field">
-    <%= form.label "Total Price: " %>
+    <%= form.label "Total Price " %>
     <%= form.text_field :totalprice %>
   </div>
 
