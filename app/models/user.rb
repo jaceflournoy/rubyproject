@@ -6,6 +6,6 @@ class User < ApplicationRecord
   ROLES = %i[admin dealership_owner sales_person sales_manager finance_manager inventory_manager]
 
   def full_name
-    #"#{firstname} #{lastname}"
+    "#{firstname} #{lastname}"
   end
 end

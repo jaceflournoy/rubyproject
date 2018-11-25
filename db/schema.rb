@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_21_013649) do
+ActiveRecord::Schema.define(version: 2018_11_25_210359) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(version: 2018_11_21_013649) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "loans2s", force: :cascade do |t|
+    t.string "loanname"
+    t.integer "years"
+    t.decimal "interestrate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "quotes", force: :cascade do |t|
     t.decimal "totalprice"
     t.decimal "multiplier"
@@ -97,6 +105,8 @@ ActiveRecord::Schema.define(version: 2018_11_21_013649) do
     t.datetime "updated_at", null: false
     t.integer "role_id"
     t.string "role"
+    t.string "firstname"
+    t.string "lastname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
   end
