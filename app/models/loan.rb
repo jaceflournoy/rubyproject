@@ -5,5 +5,6 @@ class Loan < ApplicationRecord
 
   def full_name
     "#{loanname} - #{year} years - %#{interestrate}"
+
   end
 end
