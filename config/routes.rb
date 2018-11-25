@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   resources :loans
   resources :roles
   resources :customers
-  resources :cars
   resources :searches
+
+  resources :cars do
+    member do
+      get 'wholesale_price'
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

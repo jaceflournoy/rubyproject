@@ -8,6 +8,10 @@ class CarsController < ApplicationController
     @cars = Car.all.paginate(:per_page =>5, :page => params[:page]).search(params[:search])
   end
 
+  def wholesale_price
+    wholesale = Car.find(params[:id])
+    render json: wholesale
+  end
 
   # GET /cars/1
   # GET /cars/1.json
