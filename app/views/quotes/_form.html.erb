@@ -26,25 +26,16 @@
     <%= form.collection_select :car_id, Car.all, :id, :full_car %>
   </div>
 
-  <div class="field">
-    <%= form.label "Wholesale Price" %>
-    <%= form.text_field :wholesaleprice %>
-  </div>
+  <p>Wholesale Price: <span id="wholesale_price"></span></p>
 
   <div class="field">
     <%= form.label "Loan " %>
     <%= form.collection_select :loan_id, Loan.all, :id, :full_name %>
   </div>
 
-  <div class="field">
-    <%= form.label "Multiplier " %>
-    <%= form.text_field :multiplier %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Total Price " %>
-    <%= form.text_field :totalprice %>
-  </div>
+  <p>Mark-Up Value: 0.082</p>
+  <p>Sales Tax: 0.043</p>
+  <p>Total Price: <span id="total_price"></span></p>
 
   <div class="field">
     <%= form.label :sold %>
