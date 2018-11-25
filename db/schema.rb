@@ -61,11 +61,17 @@ ActiveRecord::Schema.define(version: 2018_11_25_210547) do
   end
 
   create_table "loans", force: :cascade do |t|
+    t.decimal "interestrate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "loans2s", force: :cascade do |t|
     t.string "loanname"
-    t.integer "year"
+    t.integer "years"
     t.decimal "interestrate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "quotes", force: :cascade do |t|
