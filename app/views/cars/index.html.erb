@@ -1,8 +1,16 @@
-
 <p id="notice"><%= notice %></p>
 
 <h1>Cars</h1>
+<% if false %>
+  # Might add this back later if we can get it working
+  <%= link_to "Advanced Search", new_search_path%>
+<% end %>
 
+<%= form_tag cars_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+<br/>
 
 <table>
   <thead>
@@ -20,6 +28,12 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr>
+        <% if false %>
+          # Add this back if you have to remove it
+          <td><%=image_tag(car.image, style: 'width:100px;height:100px;')%></td>
+        <% end %>
+
+        <td><%=image_tag(car.image, style: 'width:100px;height:100px;')%></td>
         <td><%= car.vin %></td>
         <td><%= car.color %></td>
         <td><%= car.make %></td>

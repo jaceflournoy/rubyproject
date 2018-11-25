@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keyword: MyString
+  make: MyString
+  model: MyString
+  color: MyString
+  minprice: 9.99
+  maxprice: 9.99
+  vin: MyString
+
+two:
+  keyword: MyString
+  make: MyString
+  model: MyString
+  color: MyString
+  minprice: 9.99
+  maxprice: 9.99
+  vin: MyString

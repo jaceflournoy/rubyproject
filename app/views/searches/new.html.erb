@@ -1,0 +1,37 @@
+<h1>Advanced Search</h1>
+
+<%= form_for @search, html: {class: "pure-form"} do |s| %>
+
+  <div class="field">
+    <%= s.label :keyword %><br />
+    <%= s.text_field :keyword %>
+  </div>
+
+  <div class="field">
+    <%= s.label :make %><br />
+    <%= s.text_field :make, options_for_select(:make), :include_blank => true %>
+  </div>
+
+  <div class="field">
+    <%= s.label :model %><br />
+    <%= s.text_field :model, options_for_select(:model), :include_blank => true %>
+  </div>
+
+  <div class="field">
+    <%= s.label :color %><br />
+    <%= s.text_field :color, options_for_select(:model), :include_blank => true %>
+  </div>
+
+  <div class="field">
+    <p><%= s.label :minprice, "Min Price" %> - <%= s.text_field :minprice, size: 10 %></p>
+    <p><%= s.label :maxprice, "Max Price" %> - <%= s.text_field :maxprice, size: 10 %></p>
+  </div>
+
+  <div class="field">
+    <p><%= s.label :vin %> - <%= s.text_field :vin %></p>
+  </div>
+
+  <div class="actions"><%=s.submit "Search", class:"pure-button pure-button primary" %></div>
+
+  <p><%= link_to 'Back', cars_path %></p>
+<% end %>
