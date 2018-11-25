@@ -20,7 +20,6 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr>
-        <td><%=image_tag(car.image, style: 'width:100px;height:100px;')%></td>
         <td><%= car.vin %></td>
         <td><%= car.color %></td>
         <td><%= car.make %></td>
