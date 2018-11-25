@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :quotes
   resources :loans
-  resources :employees
   resources :roles
   resources :customers
   resources :cars
