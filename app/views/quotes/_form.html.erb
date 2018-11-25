@@ -12,16 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "Total Price: " %>
-    <%= form.text_field :totalprice %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Multiplier: " %>
-    <%= form.text_field :multiplier %>
-  </div>
-
-  <div class="field">
     <%= form.label "Customer: " %>
     <%= form.collection_select :customer_id, Customer.all, :id, :firstname %>
   </div>
@@ -32,13 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :sold %>
-    <%= form.check_box :sold %>
+    <%= form.label :car_id %>
+    <%= form.collection_select :car_id, Car.all, :id, :full_car %>
   </div>
 
   <div class="field">
-    <%= form.label :car_id %>
-    <%= form.collection_select :car_id, Car.all, :id, :full_car %>
+    <%= form.label :wholesaleprice %>
+    <%= form.text_field :wholesaleprice %>
   </div>
 
   <div class="field">
@@ -47,8 +37,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :wholesaleprice %>
-    <%= form.text_field :wholesaleprice %>
+    <%= form.label "Multiplier: " %>
+    <%= form.text_field :multiplier %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Total Price: " %>
+    <%= form.text_field :totalprice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sold %>
+    <%= form.check_box :sold %>
   </div>
 
   <div class="actions">
