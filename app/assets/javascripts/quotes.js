@@ -24,8 +24,7 @@ updateTotalPrice = function() {
     return $.getJSON('/cars/' + selection_id + '/wholesale_price', {}, function(json, response) {
         console.log("round 2");
         wholesalePrice = parseFloat(json['wholesaleprice']);
-        markupPrice = wholesalePrice * 0.082;
-        markupPrice = markupPrice + wholesalePrice;
+        markupPrice = (wholesalePrice * 0.082) + wholesalePrice;
         return $('#totalprice').text(markupPrice);
     });
 };
