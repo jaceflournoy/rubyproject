@@ -55,16 +55,25 @@ Scaffold:
 		Wholesale Price
 		
 		
-New Branch List:
 Feature Branches:
-
+	Complete:
 	Login (complete)
 	Authorization (complete)
 	Image capability (complete)
+	Search functionality (Need advanced search)
+	PDF compatibility for Quote table (Complete)
+	
+	
+	In Progress:
+	add math to Loan and Quote tables (In Progress)
 	Roles/Permissions (need to finish)
-	Search functionality
-	Get dropdowns working of each table
-	PDF compatibility for Quote table
-	add math to Loan and Quote tables
+	Get dropdowns working of each table (Easy and basically done)
+	Seeds file
+
+
+	Incomplete:
 	Add Dealership page / Sales Page
+	System Tests
+	Tests For calculations
+	PDF Styling
 	
