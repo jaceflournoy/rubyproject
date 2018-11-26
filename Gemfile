@@ -67,3 +67,5 @@ gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
 
 gem 'will_paginate'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
