@@ -11,6 +11,12 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.json
   def show
+    @quotes = Quote.all
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'quotes/quotereport', pdf: 'QuoteReport'}
+    end
   end
 
   # GET /quotes/new
@@ -70,6 +76,6 @@ class QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:totalprice, :multiplier, :customer_id, :employee_id, :sold, :car_id, :loan_id, :wholesaleprice)
+      params.require(:quote).permit(:totalprice, :multiplier, :customer_id, :user_id, :sold, :car_id, :loan_id, :wholesaleprice)
     end
 end

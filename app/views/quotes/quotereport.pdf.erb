@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<%=image_tag(@quote.car.image, style: 'width:140px;height:100px;')%>
-
-
+<div id="pdf">
+<center>
+  <h1>Quote for <%= @quote.customer.full_name %></h1>
+  <br />
+  <br/>
+  <% if false %>
+  <%=image_tag(@quote.car.image, style: 'width:340px;height:300px;')%>
+  <%end %>
 <p>
   <strong>Customer:</strong>
   <%= @quote.customer.full_name %>
@@ -43,7 +46,5 @@
   <%= @quote.sold %>
 </p>
 
-
-<%= link_to 'Download PDF', quote_path(@quote, format: 'pdf'), taget: '_blank' %> |
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>
+</center>
+</div>

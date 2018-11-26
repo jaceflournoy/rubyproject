@@ -20,11 +20,11 @@
   <tbody>
     <% @quotes.each do |quote| %>
       <tr>
-        <td><%= quote.customer %></td>
-        <td><%= quote.employee %></td>
-        <td><%= quote.car %></td>
+        <td><%= quote.customer.full_name %></td>
+        <td><%= quote.user.full_name %></td>
+        <td><%= quote.car.full_car %></td>
         <td><%= quote.wholesaleprice %></td>
-        <td><%= quote.loan %></td>
+        <td><%= quote.loan.full_name %></td>
         <td><%= quote.multiplier %></td>
         <td><%= quote.totalprice %></td>
         <td><%= quote.sold %></td>
