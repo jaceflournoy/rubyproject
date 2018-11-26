@@ -26,7 +26,7 @@
     <%= form.collection_select :car_id, Car.all, :id, :full_car %>
   </div>
 
-  <p>Wholesale Price: <span id="wholesale_price"></span></p>
+  <p>Wholesale Price: $ <span id="wholesaleprice"></span></p>
 
   <div class="field">
     <%= form.label "Loan " %>
@@ -35,7 +35,7 @@
 
   <p>Mark-Up Value: 0.082</p>
   <p>Sales Tax: 0.043</p>
-  <p>Total Price: <span id="total_price"></span></p>
+  <p>Total Price: <span id="totalprice"></span></p>
 
   <div class="field">
     <%= form.label :sold %>

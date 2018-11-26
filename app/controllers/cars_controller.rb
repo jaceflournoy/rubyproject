@@ -9,8 +9,8 @@ class CarsController < ApplicationController
   end
 
   def wholesale_price
-    wholesale = Car.find(params[:id])
-    render json: wholesale
+    wholesaleprice = Car.find(params[:id])
+    render json: wholesaleprice
   end
 
   # GET /cars/1
