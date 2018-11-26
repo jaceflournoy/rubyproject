@@ -77,4 +77,5 @@ Feature Branches:
 	System Tests
 	Tests For calculations
 	PDF Styling
+	User Manual
 	
