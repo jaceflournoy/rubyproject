@@ -8,6 +8,11 @@ class LoansController < ApplicationController
     @loans = Loan.all
   end
 
+  def loan_interestrate
+    interestrate = Loan.find(params[:id])
+    render json: interestrate
+  end
+
   # GET /loans/1
   # GET /loans/1.json
   def show

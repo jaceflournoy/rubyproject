@@ -9,8 +9,18 @@ Rails.application.routes.draw do
   resources :users
   get 'home/index'
   root 'home#index'
-  resources :quotes
-  resources :loans
+  resources :quotes do
+    collection do
+      get 'final_price'
+    end
+  end
+
+  resources :loans do
+    member do
+      get 'loan_interestrate'
+    end
+  end
+
   resources :roles
   resources :customers
   resources :searches

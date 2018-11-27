@@ -8,6 +8,13 @@ class QuotesController < ApplicationController
     @quotes = Quote.all
   end
 
+  def final_price
+    quote_car_id = params[:car]
+    quote_loan_id = params[:loan]
+    finalPrice = Quote.calc_final_price(quote_car_id, quote_loan_id)
+    render json: { price: finalPrice}
+  end
+
   # GET /quotes/1
   # GET /quotes/1.json
   def show
