@@ -10,37 +10,53 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label "Image:" %>
-    <%= form.file_field :image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :vin %>
-    <%= form.text_field :vin %>
-  </div>
-
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color %>
-  </div>
-
-  <div class="field">
-    <%= form.label :make %>
-    <%= form.text_field :make %>
-  </div>
-
-  <div class="field">
-    <%= form.label :model %>
-    <%= form.text_field :model %>
-  </div>
-
-  <div class="field">
-    <%= form.label :wholesaleprice %>
-    <%= form.text_field :wholesaleprice %>
-  </div>
-
+  <table>
+    <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Field Entry</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <div class="field">
+          <td><%= form.label "Image:" %></td>
+          <td><%= form.file_field :image %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label :vin %></td>
+          <td><%= form.text_field :vin %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label :color %></td>
+          <td><%= form.text_field :color %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label :make %></td>
+          <td><%= form.text_field :make %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label :model %></td>
+          <td><%= form.text_field :model %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label :wholesaleprice %></td>
+          <td><%= form.text_field :wholesaleprice %></td>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>

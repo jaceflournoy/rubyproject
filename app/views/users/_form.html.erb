@@ -10,37 +10,53 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label "First Name " %>
-    <%= form.text_field :firstname %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Last Name " %>
-    <%= form.text_field :lastname %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Email " %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Password" %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Password Confirmation " %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Role" %>
-    <%= form.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}) %>
-  </div>
-
+  <table>
+    <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Field Entry</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <div class="field">
+          <td><%= form.label "First Name " %></td>
+          <td><%= form.text_field :firstname %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label "Last Name " %></td>
+          <td><%= form.text_field :lastname %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label "Email " %></td>
+          <td><%= form.text_field :email %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label "Password" %></td>
+          <td><%= form.password_field :password %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label "Password Confirmation " %></td>
+          <td><%= form.password_field :password_confirmation %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label "Role" %></td>
+          <td><%= form.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}) %></td>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>

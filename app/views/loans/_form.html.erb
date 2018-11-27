@@ -11,21 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label "Loan Name: " %>
-    <%= form.text_field :loanname%>
-  </div>
-
-  <div class="field">
-    <%= form.label "Years: " %>
-    <%= form.collection_select(:year, Loan::YEARS, :to_s, lambda{|i| i.to_s.humanize}) %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Interest Rate: " %>
-    <%= form.text_field :interestrate %>
-  </div>
-
+  <table>
+    <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Field Entry</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <div class="field">
+          <td><%= form.label "Loan Name: " %></td>
+          <td><%= form.text_field :loanname%></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label "Years: " %></td>
+          <td><%= form.collection_select(:year, Loan::YEARS, :to_s, lambda{|i| i.to_s.humanize}) %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="field">
+          <td><%= form.label "Interest Rate: " %></td>
+          <td><%= form.text_field :interestrate %></td>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>
