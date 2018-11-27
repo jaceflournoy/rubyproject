@@ -10,38 +10,72 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label "Customer " %>
-    <%= form.collection_select :customer_id, Customer.all, :id, :full_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Employee " %>
-    <%= form.collection_select :user_id, User.all, :id, :full_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :car_id %>
-    <%= form.collection_select :car_id, Car.all, :id, :full_car %>
-  </div>
-
-  <p>Wholesale Price: $ <span id="wholesaleprice"></span></p>
-
-  <div class="field">
-    <%= form.label "Loan " %>
-    <%= form.collection_select :loan_id, Loan.all, :id, :full_name %>
-  </div>
-
-  <p>Mark-Up Value: 8.2%</p>
-  <p>Sales Tax: 4.3%</p>
-  <p>Total Price: <span id="totalprice"></span></p>
-
-  <div class="field">
-    <%= form.label :sold %>
-    <%= form.check_box :sold %>
-  </div>
-
+<table>
+  <thead>
+  <tr>
+    <th>Field Name</th>
+    <th>Field Entry</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <div class="field">
+        <td><%= form.label "Customer " %></td>
+        <td><%= form.collection_select :customer_id, Customer.all, :id, :full_name %></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="field">
+        <td><%= form.label "Employee " %></td>
+        <td><%= form.collection_select :user_id, User.all, :id, :full_name %></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="field">
+        <td><%= form.label :car_id %></td>
+        <td><%= form.collection_select :car_id, Car.all, :id, :full_car %></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="field">
+        <td><%= form.label "Wholesale Price: " %></td>
+        <td><%= form.text_field :wholesaleprice, :id=>'wholesaleprice', :class=>'form-control' %></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="field">
+        <td><%= form.label "Loan " %></td>
+        <td><%= form.collection_select :loan_id, Loan.all, :id, :full_name %></td>
+      </div>
+    </tr>
+    <tr>
+      <td><p>Subtotal Price: </p></td>
+      <td><p>$<span id="subtotalprice"></span></p></td></td>
+    </tr>
+    <tr>
+      <div class="field">
+        <td><%= form.label "Markup Value: " %></td>
+        <td><%= form.text_field :multiplier, :value => 0.082 %></td>
+      </div>
+    </tr>
+    <tr>
+      <td><p>Sales Tax:</p></td>
+      <td>4.3%</td>
+    </tr>
+    <tr>
+      <div class="field">
+        <td><%= form.label "Total Price: " %></td>
+        <td>$<%= form.text_field :totalprice, :id=>'totalprice', :class=>'form-control' %></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="field">
+        <td><%= form.label :sold %></td>
+        <td><%= form.check_box :sold %></td>
+      </div>
+    </tr>
+  </tbody>
+</table>
   <div class="actions">
     <%= form.submit %>
   </div>
