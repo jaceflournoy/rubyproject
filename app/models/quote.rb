@@ -11,10 +11,9 @@ class Quote < ApplicationRecord
 
     wholesaleprice = car.wholesaleprice
     interestrate = loan.interestrate
-    years = loan.years
 
     total_price = wholesaleprice * interestrate
 
-    return total_price;
+    return total_price
   end
 end
