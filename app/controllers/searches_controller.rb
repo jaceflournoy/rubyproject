@@ -1,4 +1,6 @@
 class SearchesController < ApplicationController
+# This currently has no functionality, but is a shell for advanced search.
+
   def new
     @search = Search.new
     @makes = Car.first

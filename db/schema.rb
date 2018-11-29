@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_005318) do
     t.string "filename", null: false
     t.string "content_type"
     t.text "metadata"
-    t.integer "byte_size", null: false
+    t.bigint "byte_size", null: false
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2018_11_26_005318) do
     t.string "phonenumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.integer "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_employees_on_role_id"
   end
 
   create_table "loans", force: :cascade do |t|

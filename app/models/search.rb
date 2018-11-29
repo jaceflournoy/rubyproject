@@ -1,5 +1,5 @@
 class Search < ApplicationRecord
-
+# This currently has no functionality, but is a shell for advanced search.
   def search_cars
 
     cars = Car.all
