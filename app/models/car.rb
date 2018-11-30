@@ -6,6 +6,10 @@ class Car < ApplicationRecord
     "#{vin} - #{make} #{model}"
   end
 
+  def car_box
+    "#{color} #{make} #{model}"
+  end
+
   def self.search(search)
     if search
       where(["make LIKE ?","%#{search}%"])

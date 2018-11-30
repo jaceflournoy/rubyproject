@@ -2,7 +2,7 @@
 
 <h1>Employees</h1>
 
-<table>
+<table class="pure-table pure-table-horizontal">
   <thead>
     <tr>
       <th>First Name</th>
@@ -19,10 +19,21 @@
         <td><%= user.firstname%></td>
         <td><%= user.lastname%></td>
         <td><%= user.email %></td>
-        <td><%= user.role %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user.role.humanize %></td>
+        <td>
+          <div class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+              <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="#" id="menuLink1" class="pure-menu-link">Options</a>
+                <ul class="pure-menu-children">
+                  <li class="pure-menu-item"><%= link_to 'Show', user %></li>
+                  <li class="pure-menu-item"><%= link_to 'Edit', edit_user_path(user) %></li>
+                  <li class="pure-menu-item"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -12,51 +12,48 @@
   <% end %>
   <table>
     <thead>
-    <tr>
-      <th>Field Name</th>
-      <th>Field Entry</th>
-    </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr class="spaceUnder">
         <div class="field">
           <td><%= form.label "Image:" %></td>
           <td><%= form.file_field :image %></td>
         </div>
       </tr>
-      <tr>
+      <tr class="spaceUnder">
         <div class="field">
-          <td><%= form.label :vin %></td>
+          <td><%= form.label "VIN #: " %></td>
           <td><%= form.text_field :vin %></td>
         </div>
       </tr>
-      <tr>
+      <tr class="spaceUnder">
         <div class="field">
-          <td><%= form.label :color %></td>
+          <td><%= form.label "Color: " %></td>
           <td><%= form.text_field :color %></td>
         </div>
       </tr>
-      <tr>
+      <tr class="spaceUnder">
         <div class="field">
-          <td><%= form.label :make %></td>
+          <td><%= form.label "Make: " %></td>
           <td><%= form.text_field :make %></td>
         </div>
       </tr>
-      <tr>
+      <tr class="spaceUnder">
         <div class="field">
-          <td><%= form.label :model %></td>
+          <td><%= form.label "Model: " %></td>
           <td><%= form.text_field :model %></td>
         </div>
       </tr>
-      <tr>
+      <tr class="spaceUnder">
         <div class="field">
-          <td><%= form.label :wholesaleprice %></td>
+          <td><%= form.label "Wholesale Price:" %></td>
           <td><%= form.text_field :wholesaleprice %></td>
         </div>
       </tr>
     </tbody>
   </table>
-  <br>
+  <br/>
+
   <div class="actions">
     <%= form.submit %>
   </div>

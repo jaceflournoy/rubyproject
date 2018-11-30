@@ -2,13 +2,13 @@
 
 <h1>Loans</h1>
 
-<table>
+<table class="pure-table pure-table-horizontal">
   <thead>
     <tr>
       <th>Loan Name</th>
       <th>Years</th>
       <th>Interest Rate</th>
-      <th colspan="3">Actions</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -18,9 +18,20 @@
         <td><%= loan.loanname %></td>
         <td><%= loan.year %></td>
         <td><%= loan.interestrate %></td>
-        <td><%= link_to 'Show', loan %></td>
-        <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
-        <td><%= link_to 'Destroy', loan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+              <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="#" id="menuLink1" class="pure-menu-link">Options</a>
+                <ul class="pure-menu-children">
+                  <li class="pure-menu-item"><%= link_to 'Show', loan %></li>
+                  <li class="pure-menu-item"><%= link_to 'Edit', edit_loan_path(loan) %></li>
+                  <li class="pure-menu-item"><%= link_to 'Destroy', loan, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -4,15 +4,19 @@
     <title>Compass Cars</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
   </head>
 
   <body>
 <center>
   <div id="header">
-
     <div id="login">
       <% if current_user %>
         Logged in as <%= current_user.email %>.
@@ -23,12 +27,16 @@
       <% end %>
     </div>
 
-    <h1>Compass Cars</h1>
-    <a href="/cars">Cars</a>
-    <a href="/customers">Customers</a>
-    <a href="/users">Employees</a>
-    <a href="/loans">Loans</a>
-    <a href="/quotes">Quotes</a>
+    <a href="/"><img src="https://i.gyazo.com/ec2607e4bec4158f564f17f6ef0fbd5a.png"></a>
+    <div class="pure-menu pure-menu-horizontal">
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="/cars" class="pure-menu-link">Cars</a></li>
+        <li class="pure-menu-item"><a href="/customers" class="pure-menu-link">Customers</a></li>
+        <li class="pure-menu-item"><a href="/users" class="pure-menu-link">Employees</a></li>
+        <li class="pure-menu-item"><a href="/loans" class="pure-menu-link">Loans</a></li>
+        <li class="pure-menu-item"><a href="/quotes" class="pure-menu-link">Quotes</a></li>
+      </ul>
+    </div>
   </div>
     <%= yield %>
 </center>

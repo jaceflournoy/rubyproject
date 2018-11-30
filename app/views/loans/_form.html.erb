@@ -13,25 +13,21 @@
 
   <table>
     <thead>
-    <tr>
-      <th>Field Name</th>
-      <th>Field Entry</th>
-    </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr class="spaceUnder">
         <div class="field">
           <td><%= form.label "Loan Name: " %></td>
           <td><%= form.text_field :loanname%></td>
         </div>
       </tr>
-      <tr>
+      <tr class="spaceUnder">
         <div class="field">
           <td><%= form.label "Years: " %></td>
           <td><%= form.collection_select(:year, Loan::YEARS, :to_s, lambda{|i| i.to_s.humanize}) %></td>
         </div>
       </tr>
-      <tr>
+      <tr class="spaceUnder">
         <div class="field">
           <td><%= form.label "Interest Rate: " %></td>
           <td><%= form.text_field :interestrate %></td>
