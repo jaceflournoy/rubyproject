@@ -5,7 +5,7 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all.paginate(:per_page =>12, :page => params[:page]).search(params[:search])
+    @cars = Car.all.paginate(:per_page =>15, :page => params[:page]).search(params[:search])
   end
 
   def wholesale_price

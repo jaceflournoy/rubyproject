@@ -2,16 +2,28 @@
 
 <p id=”notice”><%= notice %></p>
 <p id=”alert”><%= alert %></p>
-<h1>Login</h1>
+
+<h1>Employee Portal</h1>
+
+
+<h3>Login:</h3>
 <%= form_tag sessions_path do |form| %>
+  <table>
+    <tbody>
+    <tr class = "spaceUnder">
   <div class=”field”>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+    <td><%= label_tag "Email: " %></td>
+    <td><%= text_field_tag :email %></td>
   </div>
+    </tr>
+    <tr class ="spaceUnder">
   <div class=”field”>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <td><%= label_tag "Password: " %></td>
+    <td><%= password_field_tag :password %></td>
   </div>
+    </tr>
+    </tbody>
+  </table>
   <br />
   <div class=”actions”>
     <%= submit_tag 'Login' %>

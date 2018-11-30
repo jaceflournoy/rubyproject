@@ -26,15 +26,16 @@
         <%= link_to 'Log In', login_path %>
       <% end %>
     </div>
-
     <a href="/"><img src="https://i.gyazo.com/ec2607e4bec4158f564f17f6ef0fbd5a.png"></a>
     <div class="pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
+        <% if can? :read, :All %>
         <li class="pure-menu-item"><a href="/cars" class="pure-menu-link">Cars</a></li>
         <li class="pure-menu-item"><a href="/customers" class="pure-menu-link">Customers</a></li>
         <li class="pure-menu-item"><a href="/users" class="pure-menu-link">Employees</a></li>
         <li class="pure-menu-item"><a href="/loans" class="pure-menu-link">Loans</a></li>
         <li class="pure-menu-item"><a href="/quotes" class="pure-menu-link">Quotes</a></li>
+        <%end %>
       </ul>
     </div>
   </div>

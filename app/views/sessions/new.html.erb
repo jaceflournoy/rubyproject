@@ -1,14 +1,22 @@
 <p id=”alert”><%= alert %></p>
 <h1>Login</h1>
 <%= form_tag sessions_path do |form| %>
-  <div class=”field”>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </div>
-  <div class=”field”>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
+  <table>
+  <tbody>
+  <tr class = "spaceUnder">
+    <div class=”field”>
+      <td><%= label_tag "Email: " %></td>
+      <td><%= text_field_tag :email %></td>
+    </div>
+  </tr>
+  <tr class ="spaceUnder">
+    <div class=”field”>
+      <td><%= label_tag "Password: " %></td>
+      <td><%= password_field_tag :password %></td>
+    </div>
+  </tr>
+  </tbody>
+</table>
   <div class=”actions”>
     <%= submit_tag 'Login' %>
   </div>
