@@ -45,6 +45,33 @@
   <strong>Sold:</strong>
   <%= @quote.sold %>
 </p>
-
+<br>
+<br>
+  <table id="amortizedTable">
+    <thead>
+    </thead>
+    <tbody>
+    <tr class="spaceUnder">
+      <td><b>Total Price:</b></td>
+      <td>$ <%= (@quote.totalprice).round(2)%></td>
+    </tr>
+    <tr class="spaceUnder">
+      <td><b>Loan:</b></td>
+      <td><%= @quote.loan.full_name %></td>
+    </tr>
+    <tr class="spaceUnder">
+      <td><b>Interest Rate:</b></td>
+      <td>% <%= (@quote.loan.interestrate)*100%></td>
+    </tr>
+    <tr class="spaceUnder">
+      <td><b>Years:</b></td>
+      <td><%= @quote.loan.year%></td>
+    </tr>
+    <tr class="spaceUnder">
+      <td><b>Monthly Payment:</b></td>
+      <td>$ <%= (@quote.totalprice / @quote.loan.year / 12).round(2)%></td>
+    </tr>
+    </tbody>
+  </table>
 </center>
 </div>

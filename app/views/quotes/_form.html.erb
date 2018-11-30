@@ -34,9 +34,23 @@
       </tr>
       <tr class="spaceUnder">
         <div class="field">
-          <td><%= form.label "Wholesale Price: " %></td>
+          <td><%= form.label "Wholesale Price: $" %></td>
           <td><%= form.text_field :wholesaleprice, :id=>'wholesaleprice', :class=>'form-control' %></td>
         </div>
+      </tr>
+      <tr class="spaceUnder">
+        <div class="field">
+          <td><%= form.label "Markup Value: %" %></td>
+          <td><%= form.text_field :multiplier, :value => 8.2 %></td>
+        </div>
+      </tr>
+      <tr class="spaceUnder">
+        <td><p><strong>Subtotal Price: </strong></p></td>
+        <td><p>$<span id="subtotalprice"></span></p></td></td>
+      </tr>
+      <tr class="spaceUnder">
+        <td><p><strong>Sales Tax: </strong></p></td>
+        <td>4.3%</td>
       </tr>
       <tr class="spaceUnder">
         <div class="field">
@@ -45,23 +59,9 @@
         </div>
       </tr>
       <tr class="spaceUnder">
-        <td><p><strong>Subtotal Price: </strong></p></td>
-        <td><p>$<span id="subtotalprice"></span></p></td></td>
-      </tr>
-      <tr class="spaceUnder">
         <div class="field">
-          <td><%= form.label "Markup Value: " %></td>
-          <td><%= form.text_field :multiplier, :value => 0.082 %></td>
-        </div>
-      </tr>
-      <tr class="spaceUnder">
-        <td><p><strong>Sales Tax: </strong></p></td>
-        <td>4.3%</td>
-      </tr>
-      <tr class="spaceUnder">
-        <div class="field">
-          <td><%= form.label "Total Price: " %></td>
-          <td>$<%= form.text_field :totalprice, :id=>'totalprice', :class=>'form-control' %></td>
+          <td><%= form.label "Total Price: $" %></td>
+          <td><%= form.text_field :totalprice, :id=>'totalprice', :class=>'form-control' %></td>
         </div>
       </tr>
       <tr class="spaceUnder">

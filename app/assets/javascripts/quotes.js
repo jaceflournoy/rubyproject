@@ -11,7 +11,8 @@ updateTotalPrice = function() {
     loan_id = $('#quote_loan_id').val();
     return $.getJSON('/quotes/final_price', {car: car_id, loan: loan_id}, function(json, response) {
         console.log(json['price']);
-        return $('#totalprice').val(json['price']);
+        totalPrice = parseFloat(json['price']);
+        return $('#totalprice').val(totalPrice.toFixed(2));
     });
 };
 

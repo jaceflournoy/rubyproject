@@ -14,10 +14,15 @@ class Quote < ApplicationRecord
     car = Car.find(car_id)
     loan = Loan.find(loan_id)
 
-    wholesaleprice = car.wholesaleprice
-    interestrate = loan.interestrate
+    principle = car.wholesaleprice
+    rate = loan.interestrate
+    years = loan.year
 
-    total_price = wholesaleprice * interestrate
+    markupPrice = principle + (principle * 0.082)
+    taxPrice = markupPrice + (markupPrice * 0.043)
+    interest = taxPrice * rate * years
+
+    total_price = interest + taxPrice
 
     return total_price
   end

@@ -1,49 +1,77 @@
 <p id="notice"><%= notice %></p>
 
-<%=image_tag(@quote.car.image, style: 'width:140px;height:100px;')%>
+<div id="left_side" style="float:left; padding-left: 350px">
+  <%=image_tag(@quote.car.image, style: 'width:140px;height:100px;')%>
+  <p>
+    <strong>Customer:</strong>
+    <%= @quote.customer.full_name %>
+  </p>
+
+  <p>
+    <strong>Employee:</strong>
+    <%= @quote.user.full_name %>
+  </p>
+
+  <p>
+    <strong>Car:</strong>
+    <%= @quote.car.full_car %>
+  </p>
+
+  <p>
+    <strong>Wholesale Price:</strong>
+    <%= @quote.wholesaleprice%>
+  </p>
+
+  <p>
+    <strong>Loan:</strong>
+    <%= @quote.loan.full_name %>
+  </p>
+
+  <p>
+    <strong>Multiplier:</strong>
+    8.2%
+  </p>
+
+  <p>
+    <strong>Total Price:</strong>
+    <%= @quote.totalprice%>
+  </p>
+
+  <p>
+    <strong>Sold:</strong>
+    <%= @quote.sold_to_string %>
+  </p>
+  <%= link_to 'Download PDF', quote_path(@quote, format: 'pdf'), taget: '_blank' %> |
+  <%= link_to 'Edit', edit_quote_path(@quote) %> |
+  <%= link_to 'Back', quotes_path %>
+</div>
+<div id="right_side" style="float: right; padding-right: 350px;">
+  <table id="amortizedTable">
+    <thead>
+    </thead>
+    <tbody>
+      <tr class="spaceUnder">
+        <td><b>Total Price:</b></td>
+        <td>$ <%= (@quote.totalprice).round(2)%></td>
+      </tr>
+      <tr class="spaceUnder">
+        <td><b>Loan:</b></td>
+        <td><%= @quote.loan.full_name %></td>
+      </tr>
+      <tr class="spaceUnder">
+        <td><b>Interest Rate:</b></td>
+        <td>% <%= (@quote.loan.interestrate)*100%></td>
+      </tr>
+      <tr class="spaceUnder">
+        <td><b>Years:</b></td>
+        <td><%= @quote.loan.year%></td>
+      </tr>
+      <tr class="spaceUnder">
+        <td><b>Monthly Payment:</b></td>
+        <td>$ <%= (@quote.totalprice / @quote.loan.year / 12).round(2)%></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 
-<p>
-  <strong>Customer:</strong>
-  <%= @quote.customer.full_name %>
-</p>
-
-<p>
-  <strong>Employee:</strong>
-  <%= @quote.user.full_name %>
-</p>
-
-<p>
-  <strong>Car:</strong>
-  <%= @quote.car.full_car %>
-</p>
-
-<p>
-  <strong>Wholesale Price:</strong>
-  <%= @quote.wholesaleprice%>
-</p>
-
-<p>
-  <strong>Loan:</strong>
-  <%= @quote.loan.full_name %>
-</p>
-
-<p>
-  <strong>Multiplier:</strong>
-  8.2%
-</p>
-
-<p>
-  <strong>Total Price:</strong>
-  <%= @quote.totalprice%>
-</p>
-
-<p>
-  <strong>Sold:</strong>
-  <%= @quote.sold %>
-</p>
-
-
-<%= link_to 'Download PDF', quote_path(@quote, format: 'pdf'), taget: '_blank' %> |
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>
