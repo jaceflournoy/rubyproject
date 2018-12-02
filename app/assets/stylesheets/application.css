@@ -105,3 +105,16 @@ th,td {
     font-size:1.4em;
     text-align: left;
 }
+
+.tbl{
+    width: 75%;
+    border: 1px solid #dadada;
+    margin: 10%;
+    padding-top: 50px;
+}
+
+th{
+    background-color: #dadada;
+}
+
+

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div id="left_side" style="float:left; padding-left: 350px">
+<div id="left_side" style="float:left; padding-left: 350px; padding-bottom: 50px;">
   <%=image_tag(@quote.car.image, style: 'width:140px;height:100px;')%>
   <p>
     <strong>Customer:</strong>
@@ -19,7 +19,7 @@
 
   <p>
     <strong>Wholesale Price:</strong>
-    <%= @quote.wholesaleprice%>
+    $<%= (@quote.wholesaleprice).round(2)%>
   </p>
 
   <p>
@@ -34,7 +34,7 @@
 
   <p>
     <strong>Total Price:</strong>
-    <%= @quote.totalprice%>
+    $<%= (@quote.totalprice).round(2)%>
   </p>
 
   <p>
@@ -45,18 +45,18 @@
   <%= link_to 'Edit', edit_quote_path(@quote) %> |
   <%= link_to 'Back', quotes_path %>
 </div>
-<div id="right_side" style="float: right; padding-right: 350px;">
+<div id="right_side" style="float: right; padding-right: 350px; padding-bottom: 50px;">
   <table id="amortizedTable">
     <thead>
     </thead>
     <tbody>
       <tr class="spaceUnder">
         <td><b>Total Price:</b></td>
-        <td>$ <%= (@quote.totalprice).round(2)%></td>
+        <td>$ <%=(@quote.totalprice).round(2)%></td>
       </tr>
       <tr class="spaceUnder">
         <td><b>Loan:</b></td>
-        <td><%= @quote.loan.full_name %></td>
+        <td><%=@quote.loan.full_name %></td>
       </tr>
       <tr class="spaceUnder">
         <td><b>Interest Rate:</b></td>
@@ -68,10 +68,10 @@
       </tr>
       <tr class="spaceUnder">
         <td><b>Monthly Payment:</b></td>
-        <td>$ <%= (@quote.totalprice / @quote.loan.year / 12).round(2)%></td>
+        <td id="payment"><script>getPayment('<%=@quote.totalprice%>', '<%=@quote.loan.interestrate%>', '<%=@quote.loan.year%>', 4)</script></td>
       </tr>
     </tbody>
   </table>
 </div>
-
+<script>buildSchedule('<%=@quote.totalprice%>', '<%=@quote.loan.interestrate%>', '<%=@quote.loan.year%>', 4)</script>
 

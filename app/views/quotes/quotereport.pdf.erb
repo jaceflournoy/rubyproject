@@ -69,9 +69,10 @@
     </tr>
     <tr class="spaceUnder">
       <td><b>Monthly Payment:</b></td>
-      <td>$ <%= (@quote.totalprice / @quote.loan.year / 12).round(2)%></td>
+      <td>$ <%= (@quote.totalprice / @quote.loan.year / 4).round(2)%></td>
     </tr>
     </tbody>
   </table>
+  <script>buildSchedule('<%=@quote.totalprice%>', '<%=@quote.loan.interestrate%>', '<%=@quote.loan.year%>', 4)</script>
 </center>
 </div>
