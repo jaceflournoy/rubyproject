@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_005318) do
+ActiveRecord::Schema.define(version: 2018_12_02_095749) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -51,12 +51,34 @@ ActiveRecord::Schema.define(version: 2018_11_26_005318) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dealers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.integer "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_employees_on_role_id"
+  end
+
   create_table "loans", force: :cascade do |t|
     t.decimal "interestrate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "loanname"
     t.integer "year"
+  end
+
+  create_table "loans2s", force: :cascade do |t|
+    t.string "loanname"
+    t.integer "years"
+    t.decimal "interestrate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "quotes", force: :cascade do |t|
@@ -78,8 +100,18 @@ ActiveRecord::Schema.define(version: 2018_11_26_005318) do
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
+  create_table "quotesolds", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sales", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

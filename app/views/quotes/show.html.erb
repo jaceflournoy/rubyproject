@@ -72,10 +72,10 @@
       </tr>
       <tr class="spaceUnder">
         <td><b>Monthly Payment:</b></td>
-        <td id="payment"><script>getPayment('<%=@quote.totalprice%>', '<%=@quote.loan.interestrate%>', '<%=@quote.loan.year%>', 4)</script></td>
+        <td id="payment"><script>getPayment('<%=@quote.totalprice%>', '<%=@quote.loan.interestrate%>', '<%=@quote.loan.year%>', 12)</script></td>
       </tr>
     </tbody>
   </table>
 </div>
-<script>buildSchedule('<%=@quote.totalprice%>', '<%=@quote.loan.interestrate%>', '<%=@quote.loan.year%>', 4)</script>
+<script>buildSchedule('<%=@quote.totalprice%>', '<%=@quote.loan.interestrate%>', '<%=@quote.loan.year%>', 12)</script>
 

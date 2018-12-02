@@ -26,9 +26,7 @@ class Quote < ApplicationRecord
     markupPrice = principle * 1.082
     taxPrice = markupPrice * 1.043
 
-    payment = taxPrice*r/(1-1/(1+r)**n)
-
-    total_price = payment * n
+    total_price = taxPrice*((1+r)**n)
 
     return total_price
   end
