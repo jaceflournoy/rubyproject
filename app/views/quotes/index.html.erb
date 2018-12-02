@@ -23,10 +23,10 @@
         <td><%= quote.customer.full_name %></td>
         <td><%= quote.user.full_name %></td>
         <td><%= quote.car.full_car %></td>
-        <td><%= quote.wholesaleprice %></td>
+        <td><%= number_to_currency(quote.wholesaleprice) %></td>
         <td><%= quote.loan.full_name %></td>
-        <td><%= quote.multiplier %></td>
-        <td><%= quote.totalprice %></td>
+        <td><%= number_to_percentage(quote.multiplier, precision: 2)%></td>
+        <td><%= number_to_currency(quote.totalprice)%></td>
         <td><%= quote.sold_to_string %></td>
         <td>
           <div class="pure-menu pure-menu-horizontal">
@@ -35,8 +35,10 @@
                 <a href="#" id="menuLink1" class="pure-menu-link">Options</a>
                 <ul class="pure-menu-children">
                   <li class="pure-menu-item"><%= link_to 'Show', quote %></li>
+                  <% if can? :manage, Quote %>
                   <li class="pure-menu-item"><%= link_to 'Edit', edit_quote_path(quote) %></li>
                   <li class="pure-menu-item"><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                    <%end %>
                 </ul>
               </li>
             </ul>

@@ -1,0 +1,3 @@
+class Quotesold < ApplicationRecord
+
+end

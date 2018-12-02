@@ -54,9 +54,13 @@ a:hover, a:active {
     right: 0;
 }
 
-#newcar {
+#leftbutton {
     text-align: left;
     padding-left: 50px;
+}
+
+#salesmanager {
+    display :inline-block;
 }
 
 body{

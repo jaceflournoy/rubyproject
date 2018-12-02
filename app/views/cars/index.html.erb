@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Cars</h1>
-<div id="newcar"><%= link_to 'New Car', new_car_path %></div>
+<div id="leftbutton"><%= link_to 'New Car', new_car_path %></div>
 <div id="search">
   <%= form_tag cars_path, :method => 'get' do %>
     <%= text_field_tag :make_search, params[:make_search], :placeholder => "Make" %>
@@ -31,13 +31,15 @@
               <a href="#" id="menuLink1" class="pure-menu-link">Options</a>
               <ul class="pure-menu-children">
                 <li class="pure-menu-item"><%= link_to 'Show', car %></li>
+                <% if can? :manage, Car %>
                 <li class="pure-menu-item"><%= link_to 'Edit', edit_car_path(car) %></li>
                 <li class="pure-menu-item"><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                <% end %>
               </ul>
             </li>
           </ul>
         </div>
-      </div><div class="pricetext">$<%= car.wholesaleprice %></div></div>
+      </div><div class="pricetext"><%= number_to_currency(car.wholesaleprice) %></div></div>
     </div>
   </div>
   <% end %>

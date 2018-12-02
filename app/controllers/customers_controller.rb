@@ -5,7 +5,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.all
+    @customers = Customer.all.where(["firstname LIKE ?","%#{params[:firstname_search]}%"]).where(["lastname LIKE ?","%#{params[:lastname_search]}%"])
   end
 
   # GET /customers/1

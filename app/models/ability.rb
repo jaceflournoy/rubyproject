@@ -2,14 +2,46 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    alias_action :create, :read, :update, :destroy, to: :crud
     user ||= User.new # guest user (not logged in)
-    cannot :read, :all
-    can :manage, :all if user.role == "admin"
-    can :manage, :all if user.role == "dealership_owner"
-    can :manage, :all if user.role == "sales_manager"
-    can :manage, :all if user.role == "finance_manager"
-    can :manage, :all if user.role == "inventory_manager"
-    can :manage, :all if user.role == "sales_person"
+    cannot :read, :all # Guest
+
+    if user.role == "admin"
+    can :manage, :all
+    end
+
+    if user.role == "dealership_owner"
+      can :manage, :all
+    end
+
+    if user.role == "sales_manager"
+      can :manage, Sale
+      can :manage, Quote
+      can :manage, Customer
+      can :read, Loan
+      can :read, Car
+    end
+
+    if user.role == "finance_manager"
+      can :manage, Quote
+      can :manage, Loan
+      can :manage, Quotesold
+      can :read, Customer
+      can :read, Car
+    end
+
+    if user.role == "inventory_manager"
+      can :manage, Car
+    end
+
+    if user.role == "sales_person"
+      can :manage, Quote
+      can :manage, Customer
+      can :read, Car
+      can :read, Loan
+    end
+
+
 #TODO ADD THESE AUTHORIZATIONS
 
     # Define abilities for the passed in user here. For example

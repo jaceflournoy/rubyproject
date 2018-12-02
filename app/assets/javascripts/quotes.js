@@ -42,7 +42,6 @@ $(document).on('turbolinks:load', function() {
 });
 
 
-/*DUSTINS SCRIPT*/
 
 function roundNumber(num, scale) {
     if(!("" + num).includes("e")) {

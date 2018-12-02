@@ -4,6 +4,6 @@ class Loan < ApplicationRecord
   YEARS = %i[3 4 5]
 
   def full_name
-    "#{loanname} - #{year} years - #{interestrate * 100}%"
+    "#{year} years - #{interestrate * 100}%"
   end
 end

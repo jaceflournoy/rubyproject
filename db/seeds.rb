@@ -21,13 +21,32 @@ c4 = Car.create(vin: "5N1AR18B28C611174", color: "Purple", make: "Cadillac", mod
                 created_at: DateTime.now, updated_at: DateTime.now)
 c4.image.attach(io: File.open('app/assets/images/inception images/cadi.jpg'), filename: 'cadi.jpg', content_type: 'image/jpg')
 
-c5 = Car.create(vin: "1N4AZ0CP2DC417195", color: "Sad", make: "Truong", model: "MiniVan", wholesaleprice: 999,
+c5 = Car.create(vin: "1N4AZ0CP2DC417195", color: "White", make: "Volkswagen", model: "Van", wholesaleprice: 56999,
                 created_at: DateTime.now, updated_at: DateTime.now)
 c5.image.attach(io: File.open('app/assets/images/inception images/minivan.jpg'), filename: 'minivan.jpg', content_type: 'image/jpg')
 
 
+Customer.create(firstname: 'John', lastname: 'Freeman', phonenumber: '918-869-1074', created_at: DateTime.now, updated_at: DateTime.now)
+Customer.create(firstname: 'Charles', lastname: 'Smith', phonenumber: '586-912-5526', created_at: DateTime.now, updated_at: DateTime.now)
+Customer.create(firstname: 'James', lastname: 'Odegaard', phonenumber: '213-447-3945', created_at: DateTime.now, updated_at: DateTime.now)
+Customer.create(firstname: 'Fumiko', lastname: 'Freeman', phonenumber: '313-358-5206', created_at: DateTime.now, updated_at: DateTime.now)
+Customer.create(firstname: 'Ina', lastname: 'Oneal', phonenumber: '806-896-4217', created_at: DateTime.now, updated_at: DateTime.now)
+
+User.create(firstname: 'Jace', lastname: 'Flournoy', email:'admin@compasscars.com', password: 'demo', role: 'admin')
+User.create(firstname: 'Troy', lastname: 'Amundsen', email:'dealershipowner@compasscars.com', password: 'demo', role: 'dealership_owner')
+User.create(firstname: 'Elsie', lastname: 'West', email:'salesmanager@compasscars.com', password: 'demo', role: 'sales_manager')
+User.create(firstname: 'Tina', lastname: 'Garduno', email:'financemanager@compasscars.com', password: 'demo', role: 'finance_manager')
+User.create(firstname: 'Linda', lastname: 'Drake', email:'inventorymanager@compasscars.com', password: 'demo', role: 'inventory_manager')
+User.create(firstname: 'Daryl', lastname: 'Martin', email:'salesperson@compasscars.com', password: 'demo', role: 'sales_person')
+
+Loan.create(loanname: '3 Year', year: 3, interestrate: 0.023)
+Loan.create(loanname: '4 Year', year: 4, interestrate: 0.035)
+Loan.create(loanname: '5 Year', year: 5, interestrate: 0.047)
 
 
 
+p "Created a total of #{Car.count} Car entries."
+p "Created a total of #{Customer.count} Customer entries."
+p "Created a total of #{User.count} User entries."
+p "Created a total of #{Loan.count} Loan entries."
 
-p "Created a total of #{Car.count} entries."

@@ -3,6 +3,13 @@
 
 <h1>Customers</h1>
 
+<div id="search">
+  <%= form_tag customers_path, :method => 'get' do %>
+    <%= text_field_tag :firstname_search, params[:firstname_search], :placeholder => "First Name" %>
+    <%= text_field_tag :lastname_search, params[:lastname_search], :placeholder => "Last Name"  %>
+    <%= submit_tag "Search" %>
+  <% end %>
+<br />
 <table class="pure-table pure-table-horizontal">
   <thead>
     <tr>
@@ -26,8 +33,10 @@
               <a href="#" id="menuLink1" class="pure-menu-link">Options</a>
               <ul class="pure-menu-children">
                 <li class="pure-menu-item"><%= link_to 'Show', customer %></li>
+                <% if can? :manage, Customer %>
                 <li class="pure-menu-item"><%= link_to 'Edit', edit_customer_path(customer) %></li>
                 <li class="pure-menu-item"><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                  <%end %>
               </ul>
             </li>
           </ul>

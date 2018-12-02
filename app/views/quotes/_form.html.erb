@@ -64,12 +64,14 @@
           <td><%= form.text_field :totalprice, :id=>'totalprice', :class=>'form-control' %></td>
         </div>
       </tr>
+      <% if can? :manage, Quotesold %>
       <tr class="spaceUnder">
         <div class="field">
           <td><%= form.label "Sold: " %></td>
           <td><%= form.check_box :sold %></td>
         </div>
       </tr>
+      <%end %>
     </tbody>
   </table>
   <br>

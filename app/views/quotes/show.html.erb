@@ -19,7 +19,7 @@
 
   <p>
     <strong>Wholesale Price:</strong>
-    $<%= (@quote.wholesaleprice).round(2)%>
+    <%= number_to_currency(@quote.wholesaleprice)%>
   </p>
 
   <p>
@@ -34,25 +34,29 @@
 
   <p>
     <strong>Total Price:</strong>
-    $<%= (@quote.totalprice).round(2)%>
+    <%= number_to_currency(@quote.totalprice)%>
   </p>
 
   <p>
     <strong>Sold:</strong>
     <%= @quote.sold_to_string %>
   </p>
+  <% if can? :manage, Quotesold %>
   <%= link_to 'Download PDF', quote_path(@quote, format: 'pdf'), taget: '_blank' %> |
+    <%end %>
+    <% if can? :manage, Quote %>
   <%= link_to 'Edit', edit_quote_path(@quote) %> |
+    <%end %>
   <%= link_to 'Back', quotes_path %>
 </div>
-<div id="right_side" style="float: right; padding-right: 350px; padding-bottom: 50px;">
+<div id="right_side" style="float: right; padding-right: 350px; padding-bottom: 50px; padding-top: 100px;">
   <table id="amortizedTable">
     <thead>
     </thead>
     <tbody>
       <tr class="spaceUnder">
         <td><b>Total Price:</b></td>
-        <td>$ <%=(@quote.totalprice).round(2)%></td>
+        <td><%=number_to_currency(@quote.totalprice)%></td>
       </tr>
       <tr class="spaceUnder">
         <td><b>Loan:</b></td>
@@ -60,7 +64,7 @@
       </tr>
       <tr class="spaceUnder">
         <td><b>Interest Rate:</b></td>
-        <td>% <%= (@quote.loan.interestrate)*100%></td>
+        <td><%= (@quote.loan.interestrate)*100%>%</td>
       </tr>
       <tr class="spaceUnder">
         <td><b>Years:</b></td>
