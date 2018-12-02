@@ -4,11 +4,12 @@
 <h1>Cars</h1>
 <div id="newcar"><%= link_to 'New Car', new_car_path %></div>
 <div id="search">
-<%= form_tag cars_path, :method => 'get' do %>
-    Make:
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search" %>
-<% end %>
+  <%= form_tag cars_path, :method => 'get' do %>
+    <%= text_field_tag :make_search, params[:make_search], :placeholder => "Make" %>
+    <%= text_field_tag :model_search, params[:model_search], :placeholder => "Model"  %>
+    <%= text_field_tag :color_search, params[:color_search], :placeholder => "Color"  %>
+    <%= submit_tag "Search" %>
+  <% end %>
 </div>
 <br/>
 <%=will_paginate @cars %>
