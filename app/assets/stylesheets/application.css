@@ -30,8 +30,13 @@ LINEN: #e9e9e9
     color: white;
 }
 
+.pure-menu-children {
+    border-radius: 10%;
+}
+
 .pure-menu-item {
     background-color: #88bbd6;
+
 }
 
 a:link, a:visited {
@@ -77,6 +82,9 @@ th,td {
     padding: 15px;
 }
 
+img {
+    border-radius: 10%;
+}
 
 .productbox {
     position: absolute;
@@ -104,4 +112,11 @@ th,td {
     font-weight:bold;
     font-size:1.4em;
     text-align: left;
+}
+
+#container {
+    width: 1000px;
+    overflow: hidden;
+    margin: 50px auto;
+    background: white;
 }

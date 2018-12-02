@@ -10,13 +10,5 @@ class Car < ApplicationRecord
     "#{color} #{make} #{model}"
   end
 
-  def self.search(search)
-    if search
-      where(["make LIKE ?","%#{search}%"])
-    else
-      all
-    end
-  end
-
 end
 

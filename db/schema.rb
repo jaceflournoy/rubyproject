@@ -51,15 +51,6 @@ ActiveRecord::Schema.define(version: 2018_11_26_005318) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "employees", force: :cascade do |t|
-    t.string "firstname"
-    t.string "lastname"
-    t.integer "role_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["role_id"], name: "index_employees_on_role_id"
-  end
-
   create_table "loans", force: :cascade do |t|
     t.decimal "interestrate"
     t.datetime "created_at", null: false
