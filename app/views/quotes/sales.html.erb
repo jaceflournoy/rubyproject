@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+<h1>Sales</h1>
+<div style="float: left; padding-left: 100px">
+<%= link_to 'New Quote', new_quote_path %><br><br>
+<%= link_to 'All Quotes', '/quotes' %><br><br>
+<%= link_to 'Employees', '/users' %><br><br>
+<%= link_to 'Customers', '/customers'%><br><br>
+</div>
+<br>
+<div style="float: left; padding-left: 175px;">
+  <h3>Recent Sales by Employee</h3>
+  <table style="width: 300px;">
+    <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Amount Sold</th>
+    </tr>
+    </thead>
+    <tbody>
+      <%@quotes.where(:sold=>true).each do |quote|%>
+      <tr class="spaceUnder">
+        <td><%=quote.user.full_name%></td>
+        <td>$<%=quote.totalprice%></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<div style="float: right; padding-right: 350px;">
+  <h3>Sales Margins</h3>
+  <table style="width: 300px;">
+    <thead>
+    <tr>
+      <th>Gross Income</th>
+      <th>Net Income</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr class="spaceUnder">
+        <td>$<%= @quotes.sum( :totalprice) %></td>
+        <td>$<%= (@quotes.sum( :totalprice)) - (@quotes.sum(:wholesaleprice)) %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+

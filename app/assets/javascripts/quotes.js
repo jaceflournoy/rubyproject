@@ -91,7 +91,7 @@ function buildSchedule(principal, rate, years, compound) {
   var tbdy = document.createElement('tbody');
   var hdr = document.createElement('tr');
   var head = document.createElement('th');
-    head.innerText = "Year";
+    head.innerText = "Period";
     hdr.appendChild(head);
     head = document.createElement('th');
   head.innerText = "Beginning Balance";
