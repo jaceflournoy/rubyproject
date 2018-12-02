@@ -32,4 +32,8 @@ class Quote < ApplicationRecord
 
     return total_price
   end
+
+  def sum
+    inject(0) { |sum, x| sum + x }
+  end
 end
