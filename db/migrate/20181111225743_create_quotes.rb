@@ -8,7 +8,7 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.references :car, foreign_key: true
       t.references :loan, foreign_key: true
       t.decimal :wholesaleprice
-
+      t.references :user, foreign_key: true
       t.timestamps
     end
   end
