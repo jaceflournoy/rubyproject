@@ -11,5 +11,13 @@ class Car < ApplicationRecord
     "#{color} #{make} #{model}"
   end
 
+  before_create :add_default_car_img, on: [:create, :update]
+
+  private def add_default_car_img
+    unless image.attached?
+      self.image.attach(io: File.open('app/assets/images/inception images/default-car.jpg'), filename: 'default-car.jpg', content_type: 'image/jpg')
+    end
+  end
+
 end
 
