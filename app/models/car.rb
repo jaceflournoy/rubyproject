@@ -17,6 +17,7 @@ class Car < ApplicationRecord
     unless image.attached?
       self.image.attach(io: File.open('app/assets/images/inception images/default-car.jpg'), filename: 'default-car.jpg', content_type: 'image/jpg')
     end
+    
   end
 
 end
