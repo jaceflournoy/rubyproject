@@ -1,78 +1,66 @@
-<div id="pdf">
-<center>
-  <h1>Quote for <%= @quote.customer.full_name %></h1>
-  <br />
-  <br/>
-  <% if false %>
-  <%=image_tag(@quote.car.image, style: 'width:340px;height:300px;')%>
-  <%end %>
-<p>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #header {
+      border-bottom: 4px solid #99d3df;
+      padding: 10px;
+      margin: auto;
+      text-align: center;
+      background-color: #88bbd6;
+      text-decoration-color: #ffffff;
+      color: white;
+    }
+  </style>
+  <div id="header">
+    <img src="https://i.gyazo.com/ec2607e4bec4158f564f17f6ef0fbd5a.png">
+  </div>
+  <% wicked_pdf_stylesheet_link_tag 'pdf' %>
+  <meta charset ="utf-8">
+<h1>Quote</h1>
+</head>
+
+<br/>
+<body style="text-align: center;">
+<%=image_tag(@quote.car.image, style: 'width:440px;height:300px;')%>
+<hr style="width: 65%;"/>
+<h2>
   <strong>Customer:</strong>
   <%= @quote.customer.full_name %>
-</p>
-
-<p>
+</h2>
+<br/>
+<h2>
   <strong>Employee:</strong>
   <%= @quote.user.full_name %>
-</p>
-
-<p>
+</h2>
+<br/>
+<h2>
   <strong>Car:</strong>
   <%= @quote.car.full_car %>
-</p>
-
-<p>
+</h2>
+<br/>
+<h2>
   <strong>Wholesale Price:</strong>
-  <%= @quote.wholesaleprice %>
-</p>
-
-<p>
+  <%= number_to_currency(@quote.wholesaleprice)%>
+</h2>
+<br/>
+<h2>
   <strong>Loan:</strong>
   <%= @quote.loan.full_name %>
-</p>
-
-<p>
+</h2>
+<br/>
+<h2>
   <strong>Multiplier:</strong>
-  <%= @quote.multiplier %>
-</p>
-
-<p>
+  8.2%
+</h2>
+<br/>
+<h2>
   <strong>Total Price:</strong>
-  <%= @quote.totalprice %>
-</p>
-
-<p>
-  <strong>Sold:</strong>
-  <%= @quote.sold %>
-</p>
-<br>
-<br>
-  <table id="amortizedTable">
-    <thead>
-    </thead>
-    <tbody>
-    <tr class="spaceUnder">
-      <td><b>Total Price:</b></td>
-      <td>$ <%= (@quote.totalprice).round(2)%></td>
-    </tr>
-    <tr class="spaceUnder">
-      <td><b>Loan:</b></td>
-      <td><%= @quote.loan.full_name %></td>
-    </tr>
-    <tr class="spaceUnder">
-      <td><b>Interest Rate:</b></td>
-      <td>% <%= (@quote.loan.interestrate)*100%></td>
-    </tr>
-    <tr class="spaceUnder">
-      <td><b>Years:</b></td>
-      <td><%= @quote.loan.year%></td>
-    </tr>
-    <tr class="spaceUnder">
-      <td><b>Monthly Payment:</b></td>
-      <td>$ <%= (@quote.totalprice / @quote.loan.year / 4).round(2)%></td>
-    </tr>
-    </tbody>
-  </table>
-  <script>buildSchedule('<%=@quote.totalprice%>', '<%=@quote.loan.interestrate%>', '<%=@quote.loan.year%>', 4)</script>
-</center>
-</div>
+  <%= number_to_currency(@quote.totalprice)%>
+</h2>
+<br/>
+<h1>
+  <p style="color: red;"><%= @quote.sold_to_string %></p>
+</h1>
+</body>
+</html>

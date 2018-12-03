@@ -20,6 +20,6 @@
 WickedPdf.config = {
 # Download from here https://wkhtmltopdf.org/downloads.html
 # unpack, and run or save in c, not in ruby
-    #exe_path: 'C:\wkhtmltopdf\bin\wkhtmltopdf.exe',
-  exe_path: Gem.bin_path('wkhtmltopdf-binary', 'wkhtmltopdf')
+  exe_path: 'C:\wkhtmltopdf\bin\wkhtmltopdf.exe'
+  # exe_path: Gem.bin_path('wkhtmltopdf-binary', 'wkhtmltopdf')
 }

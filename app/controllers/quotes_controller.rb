@@ -22,7 +22,10 @@ class QuotesController < ApplicationController
     respond_to do |format|
       format.html
       format.json
-      format.pdf {render template: 'quotes/quotereport', pdf: 'QuoteReport'}
+      format.pdf {
+        render template: 'quotes/quotereport',
+               pdf: 'QuoteReport'
+      }
     end
   end
 
