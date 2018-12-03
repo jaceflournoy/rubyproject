@@ -4,17 +4,17 @@ class Quote < ApplicationRecord
   belongs_to :car
   belongs_to :loan
 
+  def helper
+    wholesale = wholesaleprice
+  end
+
   def sold_to_string
     sold ? 'Sold' : 'Not Sold'
   end
 
-
-#   TODO add math for price, constant multiplier and wholesale price
   def self.calc_final_price(car_id, loan_id)
     car = Car.find(car_id)
-      #wholesale price
     loan = Loan.find(loan_id)
-      #name, years, interest rate
 
     principle = car.wholesaleprice
     rate = loan.interestrate

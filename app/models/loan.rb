@@ -1,6 +1,6 @@
 class Loan < ApplicationRecord
-  #TODO add math here for loan by inputted interest rate
-  #
+  validates_numericality_of :interestrate, greater_than_or_equal_to:0
+
   YEARS = %i[3 4 5]
 
   def full_name

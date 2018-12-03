@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+8:
   vin: MyString
   color: MyString
   make: MyString
   model: MyString
   wholesaleprice: 9.99
 
-two:
+9:
   vin: MyString
   color: MyString
   make: MyString

@@ -1,21 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  totalprice: 9.99
-  multiplier: 9.99
-  customer: one
-  employee: one
+  totalprice: 12716.51
+  multiplier: 0.082
+  customer: 4
   sold: false
-  car: one
-  loan: one
-  wholesaleprice: 9.99
+  car: 8
+  loan: 1
+  wholesaleprice: 10000
 
 two:
-  totalprice: 9.99
-  multiplier: 9.99
-  customer: two
-  employee: two
+  totalprice: 89,015.59
+  multiplier: 0.082
+  customer: 4
   sold: false
-  car: two
-  loan: two
-  wholesaleprice: 9.99
+  car: 9
+  loan: 1
+  wholesaleprice: 70000

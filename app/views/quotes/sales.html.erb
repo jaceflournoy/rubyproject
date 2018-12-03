@@ -15,9 +15,9 @@
         </thead>
         <tbody>
         <tr class="spaceUnder">
-          <td><%= number_to_currency(@quotes.sum( :totalprice)) %></td>
-          <td><%= number_to_currency((@quotes.sum( :totalprice)) - (@quotes.sum(:wholesaleprice))) %></td>
-          <td><%= number_to_currency(@quotes.sum( :totalprice) * 0.043) %></td>
+          <td><%= number_to_currency(@quotes.where(:sold=>true).sum( :totalprice)) %></td>
+          <td><%= number_to_currency((@quotes.where(:sold=>true).sum( :totalprice)) - (@quotes.where(:sold=>true).sum(:wholesaleprice))) %></td>
+          <td><%= number_to_currency(@quotes.where(:sold=>true).sum( :totalprice) * 0.043) %></td>
         </tr>
         </tbody>
       </table>
