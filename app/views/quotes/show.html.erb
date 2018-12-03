@@ -71,7 +71,7 @@
         <td><%= @quote.loan.year%></td>
       </tr>
       <tr class="spaceUnder">
-        <td><b>Monthly Payment:</b></td>
+        <td><b>Monthly Payment: </b></td>
         <td id="payment"><script>getPayment('<%=@quote.totalprice%>', '<%=@quote.loan.interestrate%>', '<%=@quote.loan.year%>', 12)</script></td>
       </tr>
     </tbody>

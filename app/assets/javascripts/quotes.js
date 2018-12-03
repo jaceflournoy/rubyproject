@@ -62,7 +62,7 @@ function e(b,n){return Math.pow(b,n);}
 function getPayment(principal,rate,years,compound) {
     let r = rate / compound;
     let n = years * compound;
-    document.getElementById("payment").innerText = roundNumber(principal*r/(1-e(1/(1+r),n)),2);
+    document.getElementById("payment").innerText = "$" + roundNumber(principal*r/(1-e(1/(1+r),n)),2);
 }
 
 function getSchedule(period,principal,rate,years,compound){
@@ -90,7 +90,7 @@ function buildSchedule(principal, rate, years, compound) {
   var tbdy = document.createElement('tbody');
   var hdr = document.createElement('tr');
   var head = document.createElement('th');
-    head.innerText = "Period";
+    head.innerText = "Month";
     hdr.appendChild(head);
     head = document.createElement('th');
   head.innerText = "Beginning Balance";
@@ -113,16 +113,16 @@ function buildSchedule(principal, rate, years, compound) {
     td.innerText = i.toString();
     tr.appendChild(td);
       td = document.createElement('td');
-      td.innerText = data.begbal.toLocaleString();
+      td.innerText = "$" + data.begbal.toLocaleString();
     tr.appendChild(td);
     td = document.createElement('td');
-    td.innerText = data.interest.toLocaleString();
+    td.innerText = "$" + data.interest.toLocaleString();
     tr.appendChild(td);
     td = document.createElement('td');
-    td.innerText = data.principal.toLocaleString();
+    td.innerText = "$" + data.principal.toLocaleString();
     tr.appendChild(td);
     td = document.createElement('td');
-    td.innerText = data.endbal.toLocaleString();
+    td.innerText = "$" + data.endbal.toLocaleString();
     tr.appendChild(td);
     tbdy.appendChild(tr);
   }

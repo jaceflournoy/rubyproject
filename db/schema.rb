@@ -56,29 +56,12 @@ ActiveRecord::Schema.define(version: 2018_12_02_095749) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "employees", force: :cascade do |t|
-    t.string "firstname"
-    t.string "lastname"
-    t.integer "role_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["role_id"], name: "index_employees_on_role_id"
-  end
-
   create_table "loans", force: :cascade do |t|
     t.decimal "interestrate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "loanname"
     t.integer "year"
-  end
-
-  create_table "loans2s", force: :cascade do |t|
-    t.string "loanname"
-    t.integer "years"
-    t.decimal "interestrate"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "quotes", force: :cascade do |t|
