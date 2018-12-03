@@ -57,28 +57,26 @@ ActiveRecord::Schema.define(version: 2018_12_02_095749) do
   end
 
   create_table "loans", force: :cascade do |t|
+    t.string "loanname"
+    t.integer "year"
     t.decimal "interestrate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "loanname"
-    t.integer "year"
   end
 
   create_table "quotes", force: :cascade do |t|
     t.decimal "totalprice"
     t.decimal "multiplier"
     t.integer "customer_id"
-    t.integer "employee_id"
     t.boolean "sold"
     t.integer "car_id"
     t.integer "loan_id"
     t.decimal "wholesaleprice"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.index ["car_id"], name: "index_quotes_on_car_id"
     t.index ["customer_id"], name: "index_quotes_on_customer_id"
-    t.index ["employee_id"], name: "index_quotes_on_employee_id"
     t.index ["loan_id"], name: "index_quotes_on_loan_id"
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
@@ -88,40 +86,20 @@ ActiveRecord::Schema.define(version: 2018_12_02_095749) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "sales", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "searches", force: :cascade do |t|
-    t.string "keyword"
-    t.string "make"
-    t.string "model"
-    t.string "color"
-    t.decimal "minprice"
-    t.decimal "maxprice"
-    t.string "vin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "role_id"
-    t.string "role"
     t.string "firstname"
     t.string "lastname"
+    t.string "email"
+    t.string "password_digest"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
 end
