@@ -59,6 +59,12 @@
   <%= number_to_currency(@quote.totalprice)%>
 </h2>
 <br/>
+<h2>
+  <strong>Monthly Payment:</strong>
+  <%r = @quote.loan.interestrate / 12 %>
+  <%n = @quote.loan.year * 12 %>
+  <%=number_to_currency(@quote.totalprice * r/(1-(1/(1+r))**n)) %>
+</h2>
 <h1>
   <p style="color: red;"><%= @quote.sold_to_string %></p>
 </h1>
